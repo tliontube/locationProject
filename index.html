@@ -29,27 +29,28 @@
     let userMarker;
 
     function initMap() {
-      map = new google.maps.Map(document.getElementById("map"), {
-        center: { lat: 37.7749, lng: -122.4194 },
-        zoom: 12,
-      });
-      directionsService = new google.maps.DirectionsService();
-      directionsRenderer = new google.maps.DirectionsRenderer();
-      directionsRenderer.setMap(map);
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 37.7749, lng: -122.4194 },
+    zoom: 12,
+  });
+  directionsService = new google.maps.DirectionsService();
+  directionsRenderer = new google.maps.DirectionsRenderer();
+  directionsRenderer.setMap(map);
 
-      const originAutocomplete = new google.maps.places.Autocomplete(
-        document.getElementById("origin")
-      );
-      const destinationAutocomplete = new google.maps.places.Autocomplete(
-        document.getElementById("destination")
-      );
+  const originAutocomplete = new google.maps.places.Autocomplete(
+    document.getElementById("origin")
+  );
+  const destinationAutocomplete = new google.maps.places.Autocomplete(
+    document.getElementById("destination")
+  );
 
-      // Get and display user's current location on map
-      getUserLocation();
-      
-      // Update user's location every 5 seconds
-      setInterval(getUserLocation, 1000);
-    }
+  // Get and display user's current location on map
+
+
+  // Update user's location every 5 seconds
+  setInterval(getUserLocation, 5000); // Note: Removed the parentheses after getUserLocation
+}
+
 
     function getUserLocation() {
       if (navigator.geolocation) {
