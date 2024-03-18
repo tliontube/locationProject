@@ -46,6 +46,9 @@
 
       // Get and display user's current location on map
       getUserLocation();
+      
+      // Update user's location every 5 seconds
+      setInterval(getUserLocation, 5000);
     }
 
     function getUserLocation() {
@@ -152,7 +155,6 @@
       }
     }
   </script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMvHTvx8oVrT5NDIXLck6aqLacu3tIHU8
-  &callback=initMap" async defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMvHTvx8oVrT5NDIXLck6aqLacu3tIHU8&callback=initMap" async defer></script>
 </body>
 </html>
